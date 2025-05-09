@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #000032, #46427b, #8c85c5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #fff;
+}
+
+/* Container Principal */
+.contact-container {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding: 20px;
+  flex-wrap: wrap; /* Para tornar responsivo */
+}
+
+/* Imagem */
+.imagemT img {
+  width: 400px;
+  height: auto;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Formulário */
+.contact-form {
+  width: 100%;
+  max-width: 500px;
+  background-color: #000032;
+  border: 1px solid #46427b;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 8px 20px rgba(140, 133, 197, 0.2);
+  animation: slideIn 1s ease-out;
+}
+
+.contact-form h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #8c85c5;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #8c85c5;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #46427b;
+  border-radius: 8px;
+  background-color: #1e1e3c;
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #8c85c5;
+  box-shadow: 0 0 8px #8c85c5;
+}
+
+/* Botão com animação */
+.btn-submit {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(90deg, #8c85c5, #46427b, #8c85c5);
+  background-size: 200%;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: gradientMove 3s infinite;
+}
+
+.btn-submit:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(140, 133, 197, 0.5);
+}
+
+.btn-submit:active {
+  transform: translateY(1px);
+}
+
+/* Animações */
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .imagemT img {
+    width: 300px;
+  }
+}

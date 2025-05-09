@@ -9,13 +9,13 @@
 
 main {
     height: 100vh;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: black;
+    background: linear-gradient(135deg, #46427b, #000032, #8c85c5);
     color: aliceblue;
-    border: 1px solid rgb(90, 90, 207);
 }
 
 h2 {
@@ -36,6 +36,8 @@ article {
     width: 300px;
     height: 400px;
     perspective: 1000px;
+    position: relative;
+    overflow: visible;
 }
 
 .card-inner {
@@ -44,10 +46,13 @@ article {
     height: 100%;
     transition: transform 0.8s;
     transform-style: preserve-3d;
+    background-color: #6963a0;
+    border-radius: 8px;
 }
 
 article:hover .card-inner {
     transform: rotateY(180deg);
+    box-shadow: 0 0 20px 5px rgba(140, 133, 197, 0.8); /* Sombra lilás */
 }
 
 .card-front,
@@ -63,10 +68,10 @@ article:hover .card-inner {
     padding: 16px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    gap: 20px;
 }
 
 .card-front {
-    background-color: #46427b;
     color: aliceblue;
 }
 
@@ -76,7 +81,7 @@ article:hover .card-inner {
 }
 
 .card-back {
-    background-color: #8c85c5;
+    background-color: #b0aebe;
     color: #000032;
     transform: rotateY(180deg);
 }

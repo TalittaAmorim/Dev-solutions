@@ -48,7 +48,7 @@ main {
 }
 
 .card {
-    background: linear-gradient(45deg, #800080, #ffffff);
+    background: linear-gradient(45deg, #000032, #8e8aad, #46427b);
     height: 300px;
     width: 300px;
     border-radius: 50%;
@@ -63,7 +63,7 @@ main {
 }
 
 .circle {
-    background: linear-gradient(#ffffff27, #ffffff28);
+    background: linear-gradient(#232157, #6963a0);
     border-radius: inherit;
     position: absolute;
     box-shadow: -5px 5px 10px #64646f33;
@@ -131,7 +131,7 @@ button {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    background-color: #800080;
+    background-color: #46427b;
     color: white;
     font-size: 1rem;
     cursor: pointer;
