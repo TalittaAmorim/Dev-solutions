@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
 * {
   margin: 0;
@@ -7,117 +8,162 @@
   font-family: 'Poppins', sans-serif;
 }
 
-body {
-  background: linear-gradient(135deg, #000032, #46427b, #8c85c5);
+.about-us-section {
+  background-color: #000032;
   color: #fff;
+  overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  height: 80vh;
+  background: url('https://source.unsplash.com/1600x900/?technology,futuristic') no-repeat center center/cover;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  text-align: center;
+  color: #fff;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 20px;
+  
 }
 
+.hero-content {
+ 
+  padding: 30px 40px;
+  border: 2px solid #8e72ab; 
+  box-shadow: 0 8px 20px rgba(140, 133, 197, 0.2);
+  border-radius: 12px; 
+  background-clip: padding-box; 
+}
+
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  color: #8c85c5;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  max-width: 800px;
+  color: #e4e4f2;
+}
+
+/* About Container */
 .about-container {
-  width: 100%;
-  max-width: 900px;
-  background: #1e1e3c;
-  border-radius: 12px;
-  padding: 40px;
-  box-shadow: 0 8px 20px rgba(140, 133, 197, 0.3);
-  animation: fadeIn 1s ease-in-out;
+  padding: 60px 20px;
+  text-align: center;
 }
 
-.about-title {
+.our-mission h2 {
   font-size: 2.5rem;
   color: #8c85c5;
-  text-align: center;
   margin-bottom: 20px;
-  animation: slideDown 1s ease-out;
 }
 
-.about-description {
-  font-size: 1.1rem;
+.our-mission p {
+  font-size: 1.2rem;
   line-height: 1.8;
   color: #e4e4f2;
-  text-align: justify;
-  margin-bottom: 30px;
+  max-width: 800px;
+  margin: 0 auto 40px auto;
 }
 
-.values-container {
+/* Values Section */
+.values-section h2 {
+  font-size: 2.5rem;
+  color: #8c85c5;
+  margin-bottom: 40px;
+}
+
+.cards-container {
   display: flex;
-  flex-direction: column;
-  gap: 30px;
+  justify-content: center;
+  align-items: stretch;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-.mission,
-.values {
-  background: #000032;
+.card {
+  background: rgba(30, 30, 60, 0.8);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(140, 133, 197, 0.2);
+  width: 300px;
   padding: 20px;
-  border-radius: 8px;
-  border: 1px solid #46427b;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  animation: slideUp 1.2s ease-in-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.mission h2,
-.values h2 {
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(140, 133, 197, 0.5);
+}
+
+.card-content h3 {
   font-size: 1.8rem;
   color: #8c85c5;
   margin-bottom: 15px;
 }
 
-.mission p,
-.values ul {
+.card-content p {
   font-size: 1rem;
-  line-height: 1.6;
   color: #e4e4f2;
-  padding-left: 10px;
+  line-height: 1.6;
 }
 
-.values ul {
-  list-style: none;
-}
 
-.values ul li {
-  margin-bottom: 8px;
-  position: relative;
-  padding-left: 20px;
-}
 
-.values ul li::before {
-  content: '•';
-  position: absolute;
-  left: 0;
-  color: #8c85c5;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
+/* Responsiveness */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
   }
-  to {
-    opacity: 1;
+
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
   }
 }
 
-@keyframes slideDown {
-  from {
-    transform: translateY(-20px);
-    opacity: 0;
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2rem;
   }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
 
-@keyframes slideUp {
-  from {
-    transform: translateY(20px);
-    opacity: 0;
+  .hero-content p {
+    font-size: 1rem;
   }
-  to {
-    transform: translateY(0);
-    opacity: 1;
+
+  .our-mission p {
+    font-size: 1rem;
+  }
+
+  .card-content h3 {
+    font-size: 1.5rem;
+  }
+
+  .card-content p {
+    font-size: 0.9rem;
   }
 }

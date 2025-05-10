@@ -1,87 +1,159 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: black;
+  color: aliceblue;
 }
 
 main {
-    height: 100vh;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(135deg, #46427b, #000032, #8c85c5);
-    color: aliceblue;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
 h2 {
-    margin-bottom: 20px;
-    font-size: 2rem;
-    color: #8c85c5;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #8c85c5;
 }
 
 .processos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-    padding: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-article {
-    width: 300px;
-    height: 400px;
-    perspective: 1000px;
-    position: relative;
-    overflow: visible;
+.card {
+  width: 300px;
+  height: 400px;
+  perspective: 1000px;
 }
 
 .card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-    background-color: #6963a0;
-    border-radius: 8px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+  border-radius: 8px;
+  background-color: #1e1e3c;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 article:hover .card-inner {
-    transform: rotateY(180deg);
-    box-shadow: 0 0 20px 5px rgba(140, 133, 197, 0.8); /* Sombra lilás */
+  transform: rotateY(180deg);
+  box-shadow: 0 10px 25px rgba(140, 133, 197, 0.6); /* Sombra ao virar */
 }
 
 .card-front,
 .card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 16px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    gap: 20px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  border-radius: 8px;
 }
 
 .card-front {
-    color: aliceblue;
-}
-
-.card-front img {
-    max-width: 80%;
-    margin-bottom: 10px;
+  background-color: #1e1e3c;
 }
 
 .card-back {
-    background-color: #b0aebe;
-    color: #000032;
-    transform: rotateY(180deg);
+  background-color: #46427b;
+  color: #fff;
+  transform: rotateY(180deg);
+  box-shadow: 0 10px 25px rgba(140, 133, 197, 0.6); /* Sombra no verso */
+}
+
+.card-part {
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.foto {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(143, 136, 194, 0.2);
+  border-radius: 50%;
+  padding: 2px;
+}
+
+.foto img {
+ 
+  opacity: 0.9;
+  transition: transform 0.3s ease-in-out;
+}
+
+.foto img:hover {
+  transform: scale(1.1);
+}
+
+.divider {
+  width: 80%;
+  height: 1px;
+  background: #8c85c5;
+  border: none;
+  margin: 0 auto;
+}
+
+.text h3 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: #8c85c5;
+}
+
+.text p, .card-back ul {
+  font-size: 1rem;
+ 
+  color: #e4e4f2;
+}
+
+.card-back ul {
+  list-style: none;
+  padding: 0;
+}
+
+.card-back ul li {
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 10px;
+}
+
+.card-back ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #8c85c5;
+}
+
+/* Transições suaves */
+.card-inner {
+  transition: transform 0.8s, box-shadow 0.3s ease;
+}
+
+article:hover .card-inner {
+  box-shadow: 0 8px 20px rgba(140, 133, 197, 0.5);
 }

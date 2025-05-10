@@ -1,74 +1,69 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Formulário de Contato</title>
-    <link rel="stylesheet" href="form.css" />
-  </head>
-  <body>
-    <main class="contact-container">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato - DevSolutions</title>
+  <link rel="stylesheet" href="form.css">
+</head>
+<body>
+  <main class="contact-container">
+    <div class="contact-info">
+      <h2>Fale Conosco</h2>
+      <p>
+        Quer transformar suas ideias em soluções inovadoras? 
+        Entre em contato com a <strong>DevSolutions</strong>. Preencha o formulário ao lado 
+        e nossa equipe retornará o mais breve possível. Estamos prontos para impulsionar 
+        o seu sucesso com tecnologia!
+      </p>
+    </div>
+    <div class="form-wrapper">
+      <form class="contact-form" id="contactForm">
+        <h1>Contato</h1>
+        <div class="form-group">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+        </div>
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+        </div>
+        <div class="form-group">
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" rows="5" placeholder="Digite sua mensagem" required></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Enviar</button>
+      </form>
+    </div>
+  </main>
 
-      <div class="imagemT">
-        <img src="/imgs/note.png" alt="Imagem digitando no computador" />
-      </div>
+  <div id="custom-alert" class="alert hidden">
+    <div class="alert-content">
+      <p id="alert-message">Mensagem enviada com sucesso!</p>
+      <button class="alert-close">OK</button>
+    </div>
+  </div>
 
-      
-      <div class="divForm">
-        <form class="contact-form" id="contactForm">
-          <h1>Entre em Contato</h1>
-          <div class="form-group">
-            <label for="nome">Nome</label>
-            <input
-              type="text"
-              id="nome"
-              name="nome"
-              placeholder="Digite seu nome"
-              required
-            />
-          </div>
-          <div class="form-group">
-            <label for="email">E-mail</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Digite seu e-mail"
-              required
-            />
-          </div>
-          <div class="form-group">
-            <label for="mensagem">Mensagem</label>
-            <textarea
-              id="mensagem"
-              name="mensagem"
-              rows="5"
-              placeholder="Digite sua mensagem"
-              required
-            ></textarea>
-          </div>
-          <button type="submit" class="btn-submit">Enviar</button>
-        </form>
-      </div>
-    </main>
+  <script>
+    const form = document.getElementById("contactForm");
+    const alertBox = document.getElementById("custom-alert");
+    const alertClose = document.querySelector(".alert-close");
 
-    
-    <script>
-      const form = document.getElementById("contactForm");
-      form.addEventListener("submit", function (event) {
-        event.preventDefault();
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      const nome = document.getElementById("nome").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const mensagem = document.getElementById("mensagem").value.trim();
 
-        const nome = document.getElementById("nome").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const mensagem = document.getElementById("mensagem").value.trim();
+      if (nome && email && mensagem) {
+        alertBox.classList.remove("hidden");
+        form.reset();
+      }
+    });
 
-        if (nome && email && mensagem) {
-          alert("Mensagem enviada com sucesso!");
-          form.reset();
-        } else {
-          alert("Por favor, preencha todos os campos.");
-        }
-      });
-    </script>
-  </body>
+    alertClose.addEventListener("click", () => {
+      alertBox.classList.add("hidden");
+    });
+  </script>
+</body>
 </html>
