@@ -235,10 +235,122 @@ main {
     transform: translate3d(0, 0, 150px);
  }
 
+
+/* Estilo Geral do Header */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 25px 20px;
+  background: rgba(30, 30, 60, 0.8);
+  z-index: 1000;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.logo-placeholder {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-placeholder img {
+  height: 50px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin: 0;
+}
+
+nav ul li a {
+  color: #e0d7f3;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 6px 4px;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #8c85c5;
+}
+
+/* Menu Hamburguer */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background: #e0d7f3;
+  margin: 4px 0;
+  transition: all 0.3s ease;
+}
+
+.menu-toggle.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Menu Responsivo */
 @media (max-width: 900px) {
-    main {
-        flex-direction: column-reverse; padding: 120px 20px; text-align: center;
-    }
-    .text-box { flex-direction: column; gap: 20px; }
-    .circle-container { flex-direction: row; justify-content: center; }
+  .menu-toggle {
+    display: flex; /* Exibe o ícone do menu hamburguer */
+  }
+
+  nav ul {
+    display: none; /* Esconde o menu padrão */
+    flex-direction: column;
+    gap: 15px;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: rgba(30, 30, 60, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  nav ul.show {
+    display: flex; /* Mostra o menu ao clicar no hamburguer */
+  }
+
+  nav ul li a {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  .logo-placeholder img {
+    height: 40px; /* Reduz o tamanho do logo em telas menores */
+  }
+
+  .logo-placeholder p {
+    font-size: 1.2rem; /* Reduz o tamanho do texto do nome */
+  }
+
+  header {
+    padding: 15px 10px; /* Compacta o header */
+  }
 }
