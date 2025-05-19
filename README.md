@@ -1,4 +1,4 @@
-# DevSolutions – Formulário de Contato
+# DevSolutions 
 
 Este projeto foi desenvolvido como um exercício prático durante uma aula de codificação front-end no **SENAI CIMATEC**. O objetivo foi revisar e aplicar conhecimentos de **HTML**, **CSS** e **JavaScript**, com foco também em **animações e interações visuais**. A atividade propôs a criação de uma interface moderna e funcional para uma empresa fictícia de tecnologia.
 
