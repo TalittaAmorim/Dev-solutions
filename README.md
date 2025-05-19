@@ -22,8 +22,11 @@ A **DevSolutions** é uma startup fictícia especializada em consultoria e solu�
 - **JavaScript** – interações e lógica de validação  
 - **Design responsivo** – adaptado para diferentes tamanhos de tela
 
-
-
-
 Paleta de cores:
 https://paletadecores.com/paleta/8c85c5/6963a0/46427b/232157/000032/
+
+
+![devSolutions](https://github.com/user-attachments/assets/01a41288-7dec-4e93-825a-1c5fb6e6d008)
+
+
+
